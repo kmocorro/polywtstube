@@ -167,12 +167,13 @@ function PolyWTS(props){
 
           const content = await res_submit.json();
           
-          //console.log(content);
+          console.log(content);
 
           if(content.success){
 
               let loadStatusPage = `/`;
               let asStatusPage = `/`;
+              
 
               setSuccessOpenSnackBar(true);
               setIsResponseReserveSuccess(true);
