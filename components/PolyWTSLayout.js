@@ -114,7 +114,7 @@ export default function Layout(props) {
                 >
                     <Grid container spacing={2}>
                         <Grid item xs={12} sm={12} md={12} lg={4}>
-                            <form onSubmit={props.handleSubmit}>
+                            <form>
                                 <TextField  
                                     required
                                     autoFocus
@@ -129,19 +129,37 @@ export default function Layout(props) {
                                     className={classes.textField}
                                     variant="outlined"
                                 />
-                                <TextField
-                                    required    
-                                    id="Tube_ID"
-                                    label="Tube ID"
-                                    value={props.tubeID.value}
-                                    onChange={props.tubeID.onChange}
-                                    onKeyDown={props.setID.onTubeIDKeyDown}
-                                    required
-                                    fullWidth
-                                    className={classes.textField}
-                                    variant="outlined"
-                                />
-                                <Button type="submit" variant="contained" color="primary" className={classes.submit} >
+                                {
+                                    props.setID.value === '' ? 
+                                    <TextField
+                                        required    
+                                        id="Tube_ID"
+                                        label="Tube ID"
+                                        value={props.tubeID.value}
+                                        onChange={props.tubeID.onChange}
+                                        onKeyDown={props.setID.onTubeIDKeyDown}
+                                        required
+                                        disabled
+                                        style={{ cursor: 'not-allowed'}}
+                                        fullWidth
+                                        className={classes.textField}
+                                        variant="outlined"
+                                    />
+                                    :
+                                    <TextField
+                                        required    
+                                        id="Tube_ID"
+                                        label="Tube ID"
+                                        value={props.tubeID.value}
+                                        onChange={props.tubeID.onChange}
+                                        onKeyDown={props.setID.onTubeIDKeyDown}
+                                        required
+                                        fullWidth
+                                        className={classes.textField}
+                                        variant="outlined"
+                                    />
+                                }
+                                <Button type="submit" variant="contained" color="primary" className={classes.submit} onKeyDown={() => props.handleSubmit()} >
                                     Submit
                                 </Button>
                             </form>

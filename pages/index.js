@@ -120,6 +120,7 @@ function PolyWTS(props){
     function handleTubeIDOnKeyDown(e){
       if(e.key === 'Enter'){
         //console.log('Submitting...')
+        handleSubmit()
       }
     }
 
@@ -167,7 +168,7 @@ function PolyWTS(props){
 
           const content = await res_submit.json();
           
-          //console.log(content);
+          console.log(content);
 
           if(content.success){
 
@@ -179,8 +180,8 @@ function PolyWTS(props){
               setSuccessMessageSnackBar(content.success);
               
               setTimeout(() => {
-                Router.push(loadStatusPage, asStatusPage);
-              }, 5000);
+                Router.reload(loadStatusPage, asStatusPage);
+              }, 2000);
               
 
           } else if(content.error){
