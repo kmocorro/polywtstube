@@ -1,4 +1,4 @@
-import React, {Fragment, useState} from 'react'
+import React, {Fragment, useState, useEffect} from 'react'
 import Head from 'next/head'
 import PolyWTSLayout from '../components/PolyWTSLayout'
 import PropTypes from 'prop-types';
@@ -112,7 +112,7 @@ function PolyWTS(props){
 
     function handleSetIDOnKeyDown(e){
       if(e.key === 'Enter'){
-        //e.preventDefault();
+
         //console.log('Should move to next text field...');
       }
     }
@@ -234,7 +234,6 @@ function PolyWTS(props){
                 <MySnackbarContentWrapper
                     onClose={handleErrorClose}
                     variant="error"
-                    className={classes.margin}
                     message={errorMessageSnackBar}
                 />
             </Snackbar>

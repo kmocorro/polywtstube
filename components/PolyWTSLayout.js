@@ -73,8 +73,10 @@ const useStyles = makeStyles(theme => ({
 export default function Layout(props) {
     const classes = useStyles();
     //console.log(props.data);
-    console.log(props.setID.value, props.tubeID.value);
+    //console.log(props.setID.value, props.tubeID.value);
     const user = props.data;
+
+    
 
     return (
         <Fragment>
@@ -114,7 +116,6 @@ export default function Layout(props) {
                 >
                     <Grid container spacing={2}>
                         <Grid item xs={12} sm={12} md={12} lg={4}>
-                            <form>
                                 <TextField  
                                     required
                                     autoFocus
@@ -140,14 +141,16 @@ export default function Layout(props) {
                                         onKeyDown={props.setID.onTubeIDKeyDown}
                                         required
                                         disabled
-                                        style={{ cursor: 'not-allowed'}}
+                                        variant="filled"
                                         fullWidth
                                         className={classes.textField}
                                         variant="outlined"
+                                        
                                     />
                                     :
                                     <TextField
-                                        required    
+                                        name="Tube_ID"
+                                        required
                                         id="Tube_ID"
                                         label="Tube ID"
                                         value={props.tubeID.value}
@@ -159,10 +162,9 @@ export default function Layout(props) {
                                         variant="outlined"
                                     />
                                 }
-                                <Button type="submit" variant="contained" color="primary" className={classes.submit} onKeyDown={() => props.handleSubmit()} >
+                                <Button type="submit" variant="contained" color="primary" className={classes.submit} >
                                     Submit
                                 </Button>
-                            </form>
                         </Grid>
                         <Grid item xs={12} sm={12} md={12} lg={8}>
                         </Grid>
