@@ -113,13 +113,13 @@ function PolyWTS(props){
     function handleSetIDOnKeyDown(e){
       if(e.key === 'Enter'){
         //e.preventDefault();
-        console.log('Should move to next text field...');
+        //console.log('Should move to next text field...');
       }
     }
 
     function handleTubeIDOnKeyDown(e){
       if(e.key === 'Enter'){
-        console.log('Submitting...')
+        //console.log('Submitting...')
       }
     }
 
@@ -167,21 +167,20 @@ function PolyWTS(props){
 
           const content = await res_submit.json();
           
-          console.log(content);
+          //console.log(content);
 
           if(content.success){
 
               let loadStatusPage = `/`;
               let asStatusPage = `/`;
               
-
               setSuccessOpenSnackBar(true);
               setIsResponseReserveSuccess(true);
               setSuccessMessageSnackBar(content.success);
               
               setTimeout(() => {
                 Router.push(loadStatusPage, asStatusPage);
-              }, 3000);
+              }, 5000);
               
 
           } else if(content.error){
