@@ -200,7 +200,7 @@ function PolyWTS(props){
           <Head>
               <title>PolyWTS to Tube Traceability</title>
           </Head>
-          <PolyWTSLayout data={props.data} setID={setID} tubeID={tubeID} handleSubmit={handleSubmit} />
+          <PolyWTSLayout data={props.data} setID={setID} tubeID={tubeID} handleSubmit={handleSubmit} logout={logout} />
           {
             openSuccessSnackBar ?
             <Snackbar

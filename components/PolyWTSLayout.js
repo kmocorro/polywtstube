@@ -89,14 +89,20 @@ export default function Layout(props) {
             </Typography>
             <Grid
                 container
+                spacing={2}
                 direction="row"
                 justify="flex-end"
                 alignItems="center"
             >
                 <Grid item>
                     <Typography color="textPrimary" variant="body1">
-                        {user.nickName}
+                        {user.username}
                     </Typography>
+                </Grid>
+                <Grid item>
+                    <Button color={"default"} size="small" variant="outlined" onClick={props.logout}>
+                        logout
+                    </Button>
                 </Grid>
             </Grid>
             </Toolbar>
